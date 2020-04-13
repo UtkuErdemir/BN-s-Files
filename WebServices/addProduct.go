@@ -12,16 +12,12 @@ func addProductPage(w http.ResponseWriter, r *http.Request) {
 			writeResponse(w, requiredInputError("Token "))
 		} else if r.FormValue("proDes") == "" {
 			writeResponse(w, requiredInputError("Ürün açıklaması"))
-
 		} else if r.FormValue("proName") == "" {
 			writeResponse(w, requiredInputError("Ürün ismi "))
-
 		} else if r.FormValue("proPrice") == "" {
 			writeResponse(w, requiredInputError("Ürün fiyatı "))
-
 		} else if r.FormValue("proType") == "" {
 			writeResponse(w, requiredInputError("Ürün tipi "))
-
 		} else {
 			var devices, control = addProduct(r.FormValue("token"), r.FormValue("proDes"), r.FormValue("proName"), r.FormValue("proPrice"), r.FormValue("proType"))
 			if devices == true {
@@ -29,13 +25,10 @@ func addProductPage(w http.ResponseWriter, r *http.Request) {
 			} else {
 				if control == "ÜrünFiyatı" {
 					writeResponse(w, incorrectInput("Ürün Fiyatı"))
-
 				} else if control == "Ürüntipi" {
 					writeResponse(w, incorrectInput("Ürün tipi"))
-
 				} else if control == "Token" {
 					writeResponse(w, invalidPermission())
-
 				} else if control == "Save" {
 					writeResponse(w, dataBaseSaveError())
 				} else {
