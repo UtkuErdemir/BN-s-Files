@@ -19,7 +19,7 @@
     "axios": "^0.19.2",
     "deprecated-react-native-listview": "^0.0.6",
     "jetifier": "^1.6.5",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-awesome-card-io": "^0.8.2",
